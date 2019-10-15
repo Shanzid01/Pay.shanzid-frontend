@@ -1,0 +1,37 @@
+.form-container{
+    margin-top: 3vh;
+    border-radius: 10px;
+    background: white;
+    padding: 20px;
+    min-width: 250px;
+    min-height: 200px;
+    max-width: 450px;
+    max-height: 650px;
+    box-shadow: 0px 0px 10px #CFD8DC;
+    position: relative;
+    z-index: 100;
+}
+input, textarea{
+    font-size: 16px;
+    color: #424770;
+    font-family: Open Sans, sans-serif;
+    letter-spacing: 0.025em;
+}
+::placeholder {
+    color: #aab7c4;
+}
+.form-container>.btn{
+    width: 100%;
+    margin:7% 0% 0px 0%;
+    border-radius: 7px;
+}
+.form-container>.error-text{
+    color:red;
+    font-weight: 500;
+    font-size: 15px;
+    letter-spacing: 0.2px;
+    margin-top: 13px;
+}
+.error{
+    border-bottom: 1px red solid !important;
+}

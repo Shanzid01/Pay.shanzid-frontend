@@ -1,0 +1,39 @@
+.cover-layout{
+    display: block;
+    position: fixed;
+    top:0px;
+    left:0px;
+    width:100vw;
+    height: 100vh;
+    background: rgba(255, 255, 255, 0.95);
+    text-align: center;
+    z-index: 1000;
+    padding: 10%;
+}
+.hidden{
+    display: none !important;
+}
+.payment-success{
+    font-size:3em;
+    font-family: 'Nunito Sans', sans-serif;
+    font-weight: bold;
+    color:#37474F;
+    letter-spacing: 0.5px;
+    line-height: 40px;
+}
+.confetti{
+    margin:5% 50%;
+}
+.payment-info{
+    margin-top: 5%;
+    font-size: 1.4em;
+    color:#263238;
+    font-weight: 500;
+    letter-spacing: 0.4px;
+    line-height: 35px;
+}
+.payment-info>span{
+    font-weight: normal;
+    color:#546E7A;
+    font-size: 0.9em;
+}

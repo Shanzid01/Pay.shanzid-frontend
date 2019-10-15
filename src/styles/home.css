@@ -1,0 +1,40 @@
+body{
+    background-image: url("../images/bg.svg");
+    background-position-x: 100%;
+    background-repeat: no-repeat;
+    background-size:cover;
+}
+body, html{
+    margin: 0px !important;
+    padding: 0px !important;
+}
+.title{
+    font-family: 'Nunito Sans', sans-serif;
+    margin-top:7%;
+}
+.pay-span{
+    font-size: 4em;
+    font-weight: bold;
+    color:#37474F;
+}
+.shanzid-span{
+    font-size: 3em;
+    color: #263238;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    /* display: none; <- Crashes Chrome on hover */
+    -webkit-appearance: none;
+    margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+}
+
+input[type=number] {
+    -moz-appearance:textfield; /* Firefox */
+}
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active  {
+    box-shadow: 0 0 0 30px white inset !important;
+}
