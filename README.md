@@ -11,3 +11,5 @@ ReactJS app for receiving money through [Stripe](https://stripe.com/).
 * [Materialize-css](https://materializecss.com/) for UI/UX Design elements
 * [Google Fonts](https://fonts.google.com) for the amazing free fonts
 * [React-dom-confetti](https://daniel-lundin.github.io/react-dom-confetti/) for confetti effect
+
+<img src="mockup.png" />
