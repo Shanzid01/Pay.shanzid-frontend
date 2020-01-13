@@ -24,7 +24,8 @@ export default class CurrencyList extends React.Component{
             })
             .catch((err)=>{
                 console.error(err);
-                reject(err);
+                this.setState({"sender_currency":"cad"});
+                resolve();
             });
         });
     }
