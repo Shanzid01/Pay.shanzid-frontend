@@ -3,6 +3,7 @@
     border-radius: 10px;
     background: white;
     padding: 20px;
+    padding-top: 30px;
     min-width: 250px;
     min-height: 200px;
     max-width: 450px;
@@ -11,7 +12,7 @@
     position: relative;
     z-index: 100;
 }
-input, textarea{
+input, textarea, select{
     font-size: 16px;
     color: #424770;
     font-family: Open Sans, sans-serif;
@@ -34,4 +35,12 @@ input, textarea{
 }
 .error{
     border-bottom: 1px red solid !important;
+}
+.row{
+    margin-bottom: 0px;
+    height: 44px;
+}
+.input-field{
+    margin-top:0px;
+    margin-bottom: 25px;
 }

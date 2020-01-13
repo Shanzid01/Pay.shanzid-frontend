@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import {CardElement, injectStripe} from 'react-stripe-elements';
 import '../styles/checkout.css';
 import Loader from "../components/Loader";
+import CurrencyList from './CurrencyList';
 
 const createOptions = () => {
   return {
@@ -35,12 +36,11 @@ class CheckoutForm extends Component {
 
   submit() {
     if(!this.validate()) return;
-    this.setState({error:""});
+    this.setState({error:"", processing:true});
     this.props.stripe.createToken({name: document.getElementById("sender_name").value}).then(({token, error}) => {
       if (error) {
-        this.setState({error:error.message});
+        this.setState({error:error.message, processing:false});
       } else {
-        this.setState({processing:true});
         fetch("https://pay-shanzid.herokuapp.com/charge", {
           method: "POST",
           headers: {"Content-Type": "text/plain"},
@@ -48,7 +48,8 @@ class CheckoutForm extends Component {
             token:token.id,
             payee:document.getElementById("sender_name").value,
             amount:document.getElementById("sender_amount").value,
-            message:document.getElementById("sender_message").value
+            message:document.getElementById("sender_message").value,
+            currency:document.getElementById("sender_currency").value
           })
         }).then(async (response)=>{
           if (response.ok){
@@ -68,6 +69,9 @@ class CheckoutForm extends Component {
             this.setState({error, processing:false});
           }
         })
+        .catch((error)=>{
+          this.setState({error, processing:false});
+        });
       }
     });;
   }
@@ -104,11 +108,16 @@ class CheckoutForm extends Component {
     if (this.state.complete) return <h1>Purchase Complete</h1>;
     return (
       <div className="checkout form-container col s12">
-        <div className="input-field col s6">
+        <div className="input-field col s12">
           <input id="sender_name" required  placeholder="Full name"></input>
         </div>
-        <div className="input-field col s6">
-          <input id="sender_amount" type="number" required placeholder="Amount (in CAD)" />
+        <div className="row">
+          <div className="input-field col s5">
+            <input id="sender_amount" type="number" required placeholder="Amount" />
+          </div>
+          <div className="input-field col s7">
+            <CurrencyList />
+          </div>
         </div>
         <div className="input-field col s12">
           <textarea id="sender_message" className="materialize-textarea" placeholder="Message (optional)"></textarea>

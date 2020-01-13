@@ -24,9 +24,10 @@ class App extends Component {
   componentDidMount(){
     fetch("https://pay-shanzid.herokuapp.com/boot", {
       method: "GET",
+      mode:'no-cors',
       headers: {"Content-Type": "text/plain"},
-    }).then((response)=>{
-      if(response.ok) this.setState({serverReady:true});
+    }).then((res)=>{
+      this.setState({serverReady:true});
     });
   }
 
