@@ -34,7 +34,7 @@ class App extends Component {
   render() {
     let successPage;
     if(this.state.showSuccess){
-      successPage=<Success sender={this.state.sender} confettiTrigger={this.state.showSuccess} closeSuccess={()=>this.setState({showSuccess:false})}/>;
+      successPage=<Success sender={this.state.sender} confettiTrigger={this.state.showSuccess} closeSuccess={()=>window.location.reload()}/>;
     }
     return (
       <div>
