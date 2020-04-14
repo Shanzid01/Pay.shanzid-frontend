@@ -126,7 +126,7 @@ class CheckoutForm extends Component {
         <button className={"waves-effect waves-light btn blue "+(this.state.processing? "disabled":"")} onClick={this.submit}>
           {this.state.processing? <Loader />:"Donate"}
         </button>
-        <div className={this.state.error!=""? "error-text":""}>{this.state.error}</div>
+        <div className={this.state.error!==""? "error-text":""}>{this.state.error}</div>
       </div>
     );
   }
