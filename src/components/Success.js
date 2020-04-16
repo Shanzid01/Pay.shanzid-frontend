@@ -1,19 +1,7 @@
 import React, {Component} from 'react';
 import "../styles/success.css";
 import Confetti from 'react-dom-confetti';
-import M from 'materialize-css';
-const config = {
-    angle: "160",
-    spread: "360",
-    startVelocity: "38",
-    elementCount: "200",
-    dragFriction: "0.15",
-    duration: "5710",
-    stagger: 0,
-    width: "10px",
-    height: "10px",
-    colors: ["#a864fd", "#29cdff", "#78ff44", "#ff718d", "#fdff6a"]
-  };
+
 class Success extends Component{
     constructor(props){
         super(props);

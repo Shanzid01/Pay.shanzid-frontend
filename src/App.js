@@ -1,9 +1,10 @@
 import React, {Component} from 'react';
 import {Elements, StripeProvider} from 'react-stripe-elements';
 import CheckoutForm from './components/Checkout';
-import "./styles/home.css"
-import Footer from "./components/Footer"
-import Success from "./components/Success"
+import "./styles/home.css";
+import Background from './components/Background';
+import Footer from "./components/Footer";
+import Success from "./components/Success";
 
 class App extends Component {
   constructor(props){
@@ -38,19 +39,20 @@ class App extends Component {
     }
     return (
       <div>
-      <StripeProvider apiKey="pk_live_r5RamlCiOLOsTONOYLayALoA00zz3eWyvm">
-        <div className="container">
-          <div className="title">
-            <span className="pay-span">pay.</span>
-            <span className="shanzid-span">Shanzid</span>
+        <Background />
+        <StripeProvider apiKey="pk_live_r5RamlCiOLOsTONOYLayALoA00zz3eWyvm">
+          <div className="container">
+            <div className="title">
+              <span className="pay-span">pay.</span>
+              <span className="shanzid-span">Shanzid</span>
+            </div>
+            <Elements>
+              <CheckoutForm serverReady={this.state.serverReady} paymentSuccess={(payeeData)=>this.setState({sender:payeeData, showSuccess:true})} />
+            </Elements>
           </div>
-          <Elements>
-            <CheckoutForm serverReady={this.state.serverReady} paymentSuccess={(payeeData)=>this.setState({sender:payeeData, showSuccess:true})} />
-          </Elements>
-        </div>
-      </StripeProvider>
-      {successPage}
-      <Footer />
+        </StripeProvider>
+        {successPage}
+        <Footer />
       </div>
     );
   }

@@ -1,0 +1,14 @@
+.bodyBackground{
+    position: fixed;
+    top:0px;
+    right:0px;
+    height: 100vh;
+    z-index: 0;
+}
+
+@media only screen and (max-width: 881px) {
+    .bodyBackground{
+        height: auto;
+        width: 100vw;
+    }
+}

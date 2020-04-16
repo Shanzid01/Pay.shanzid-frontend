@@ -1,16 +1,23 @@
-body{
+/*body{
     background-image: url("../images/bg.svg");
     background-position-x: 100%;
     background-repeat: no-repeat;
     background-size:cover;
-}
+}*/
+
 body, html{
     margin: 0px !important;
     padding: 0px !important;
+    background-color: #eeeeee38;
+}
+.container{
+    position: relative;
+    z-index: 1;
 }
 .title{
     font-family: 'Nunito Sans', sans-serif;
     margin-top:7%;
+    z-index: 1;
 }
 .pay-span{
     font-size: 4em;
